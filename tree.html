@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyHall🎃ween</title>
+<link rel="stylesheet" href="tree.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Source+Code+Pro:wght@300;400&display=swap');
+    </style>
+    
+    
+</head>
+<body>
+    <header>    <pre  id="decoration"></pre>
+        <pre id="tree">
+        </pre>
+        <pre id="happy-halloween">
+        </pre></header>
+
+<body>
+    <h1>The code</h1>
+    <p>function createTree(height) {<br>
+        let tree = '';<br>    <br>
+        for (let i = 1; i <= height; i++) {<br>    <br>
+            let spaces = ' '.repeat(height - i);<br>
+            let row = '';<br>    <br>
+            for (let j = 0; j < i; j++) {<br>
+                const randomValue = Math.floor(Math.random() * 5);<br>
+                if (randomValue === 0) {<br>
+                    row += '🌿';<br>
+                } else if (randomValue === 1) {<br>
+                    row += '🍂';<br>
+                } else if (randomValue === 2) {<br>
+                    row += '🎃';<br>
+                } else if (randomValue === 3) {<br>
+                    row += '👻';<br>
+                
+            } else if (randomValue === 4) {<br>
+                row += '✨';<br>
+            }<br>
+            }<br>    <br>
+            tree += spaces + row + '\n';<br>
+        }<br>
+    <br>
+        let trunkHeight = Math.floor(height / 3);<br>
+        let trunkWidth = Math.floor(height / 5);<br>
+        let trunkSpaces = ' '.repeat(height - trunkWidth - 2);<br>
+    <br>
+        for (let i = 0; i < trunkHeight; i++) {<br>
+            let trunk = '🪵'.repeat(trunkWidth * 2);<br>
+            tree += trunkSpaces + trunk + '\n';<br>
+        }<br>
+    <br>    <br>
+        document.getElementById('tree').textContent = tree;<br>
+    </p>
+    <br>
+    <p>function createHappyHalloween() {<br>
+        const textArt = [<br>
+            " 🎃   👻   🎃   👻  🎃   👻  🎃   👻  ",<br>
+            " /  / / / / / / / / / / /  / / / / / / / / / / / / /",<br>
+            "| H  A  P  P  Y        H  A  L  L 🎃  W  E  E  N |",<br>
+            " \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\",<br>
+            "   🎃   👻   🎃   👻  🎃   👻  🎃   👻 "<br>
+        ];<br>
+    <br>
+        let halloweenTextArt = '';<br>    <br>
+        for (let line of textArt) {<br>
+            halloweenTextArt += line + '\n';<br>
+        }<br>
+    <br>
+        document.getElementById('happy-halloween').textContent = halloweenTextArt;<br>
+    }</p>
+    
+    <p>function toggleDecoration() {<br>    <br>
+        const decorationContainer = document.getElementById('decoration');<br>
+        const currentContent = decorationContainer.textContent.trim();<br>    <br>
+        if (currentContent === '') {<br>
+            createCenteredtree(15);<br>
+            createHappyHalloween();<br>
+        } else {<br>
+            createHappyHalloween();<br>
+        }<br>
+    }<br>
+    
+    setInterval(toggleDecoration, 5000);</p>
+</body>
+    
+   
+    <footer>
+        <p>** Happy Coding ** </p>
+        <p>Luca Forma - <a href="www.lucaforma.com">lucaforma.com</a></p>
+    </footer>
+<script>
+        function createCenteredtree(height) {
+            let tree = '';
+            for (let i = 1; i <= height; i++) {
+                let spaces = ' '.repeat(height - i);
+                let row = '';
+                for (let j = 0; j < i; j++) {
+                    const randomValue = Math.floor(Math.random() * 5);
+                    if (randomValue === 0 ) {
+                        row += '🌿';
+                    } else if (randomValue === 1) {
+                        row += '🍂';
+                    } else if (randomValue === 2) {
+                        row += '🎃';
+                    } else if (randomValue === 3) {
+                        row += '👻';
+                    }else if (randomValue === 4) {
+                        row += '✨';
+                    }
+                }
+                tree += spaces + row + '\n';
+            }
+
+            let trunkHeight = Math.floor(height / 3);
+            let trunkWidth = Math.floor(height / 5);
+            let trunkSpaces = ' '.repeat(height - trunkWidth -2);
+
+            for (let i = 0; i < trunkHeight; i++) {
+                let trunk = '🪵'.repeat(trunkWidth * 2 -1);
+                tree += trunkSpaces + trunk + '\n';
+            }
+
+            document.getElementById('tree').textContent = tree;
+        }
+
+
+        function createHappyHalloween() {
+            const textArt = [
+                " 🎃   👻   🎃   👻  🎃   👻  🎃   👻  ",
+                " /  / / / / / / / / / / /  / / / / / / / / / / / / /",
+                "| H  A  P P Y        H  A  L L 🎃 W  E  E  N |",
+                " \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\",
+                "   🎃   👻   🎃   👻  🎃   👻  🎃   👻 "
+            ];
+
+            let halloweenTextArt = '';
+            for (let line of textArt) {
+                halloweenTextArt += line + '\n';
+            }
+
+            document.getElementById('happy-halloween').textContent = halloweenTextArt;
+        }
+        function toggleDecoration() {
+            const decorationContainer = document.getElementById('decoration');
+            const currentContent = decorationContainer.textContent.trim();
+            if (currentContent === '') {
+                createCenteredtree(20);
+                createHappyHalloween();
+            } 
+        }
+
+
+        setInterval(toggleDecoration, 300); 
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,8 @@
+body{background-color: black;
+color: white;
+display: flex;
+flex-direction: column;
+font-family: 'Pixelify Sans', sans-serif;
+font-family: 'Source Code Pro', monospace;
+
+align-items: center;}
