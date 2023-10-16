@@ -35,11 +35,11 @@ function createCenteredtree(height) {
 
 function createHappyHalloween() {
     const textArt = [
-        " 🎃   👻   🎃   👻  🎃   👻  🎃   👻  ",
-        " /  / / / / / / / / / / /  / / / / / / / / / / / / /",
-   "| H    A    P    P    Y           H    A    L    L 🎃 W    E    E    N |",
-        " \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\  \\",
-        "   🎃   👻   🎃   👻  🎃   👻  🎃   👻 "
+        "                            👻   🎃   👻  🎃   👻  🎃   👻  ",
+
+   "|               H    A    P    P    Y           H    A    L    L 🎃 W    E    E    N             |",
+
+        "                             🎃   👻   🎃   👻  🎃   👻  🎃    "
     ];
 
     let halloweenTextArt = '';
@@ -54,10 +54,24 @@ function toggleDecoration() {
     const decorationContainer = document.getElementById('decoration');
     const currentContent = decorationContainer.textContent.trim();
     if (currentContent === '') {
-        createCenteredtree(20);
+        createCenteredtree(24);
         createHappyHalloween();
     } 
 }
 
 
-setInterval(toggleDecoration, 300); 
+setInterval(toggleDecoration, 400); 
+
+let button = document.getElementById("code")
+
+let div= document.getElementById("longCode")
+
+div.className="hide"
+
+button.addEventListener("click", () => {
+
+if(   div.className === "hide" ) {
+    div.className="visible"
+} else{ div.className="hide"}
+
+})

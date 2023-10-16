@@ -1,5 +1,6 @@
-body{background-color: black;
+#tree{background-color: black;
 color: white;
+padding: 1rem;
 display: flex;
 flex-direction: column;
 font-family: 'Pixelify Sans', sans-serif;
@@ -7,5 +8,36 @@ font-family: 'Source Code Pro', monospace;
 
 align-items: center;}
 #happy-halloween {
-    font-size: 18px; /* Adjust the font size as needed */
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 26px; /* Adjust the font size as needed */
+}
+.hide{
+    display: none
+
+    ;
+}
+.visible{
+    display: block;
+}
+
+body{
+    background-color: orange;
+}
+
+#happy-halloween{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    font-size:1rem;
+}
+
+#longCode, #code{
+  text-align: flex-start;
+  cursor: pointer;
+  margin-left: 20rem;
+  
 }
